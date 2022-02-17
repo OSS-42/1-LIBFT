@@ -1,0 +1,26 @@
+Norminette -R CheckForbiddenSourceHeader ../ex00/ft_strcpy.c
+Norminette -R CheckForbiddenSourceHeader ../ex01/ft_strncpy.c
+Norminette -R CheckForbiddenSourceHeader ../ex02/ft_str_is_alpha.c
+Norminette -R CheckForbiddenSourceHeader ../ex03/ft_str_is_numeric.c
+Norminette -R CheckForbiddenSourceHeader ../ex04/ft_str_is_lowercase.c
+Norminette -R CheckForbiddenSourceHeader ../ex05/ft_str_is_uppercase.c
+Norminette -R CheckForbiddenSourceHeader ../ex06/ft_str_is_printable.c
+Norminette -R CheckForbiddenSourceHeader ../ex07/ft_strupcase.c
+Norminette -R CheckForbiddenSourceHeader ../ex08/ft_strlowcase.c
+Norminette -R CheckForbiddenSourceHeader ../ex09/ft_strcapitalize.c
+Norminette -R CheckForbiddenSourceHeader ../ex10/ft_strlcpy.c
+Norminette -R CheckForbiddenSourceHeader ../ex11/ft_putstr_non_printable.c
+Norminette -R CheckForbiddenSourceHeader ../ex12/ft_print_memory.c
+gcc -Wall -Werror -Wextra main00.c ../ex00/ft_strcpy.c -o out00
+gcc -Wall -Werror -Wextra main01.c ../ex01/ft_strncpy.c -o out01
+gcc -Wall -Werror -Wextra main02.c ../ex02/ft_str_is_alpha.c -o out02
+gcc -Wall -Werror -Wextra main03.c ../ex03/ft_str_is_numeric.c -o out03
+gcc -Wall -Werror -Wextra main04.c ../ex04/ft_str_is_lowercase.c -o out04
+gcc -Wall -Werror -Wextra main05.c ../ex05/ft_str_is_uppercase.c -o out05
+gcc -Wall -Werror -Wextra main06.c ../ex06/ft_str_is_printable.c -o out06
+gcc -Wall -Werror -Wextra main07.c ../ex07/ft_strupcase.c -o out07
+gcc -Wall -Werror -Wextra main08.c ../ex08/ft_strlowcase.c -o out08
+gcc -Wall -Werror -Wextra main09.c ../ex09/ft_strcapitalize.c -o out09
+gcc -Wall -Werror -Wextra main10.c ../ex10/ft_strlcpy.c -o out10
+gcc -Wall -Werror -Wextra main11.c ../ex11/ft_putstr_non_printable.c -o out11
+gcc -Wall -Werror -Wextra main12.c ../ex12/ft_print_memory.c -o out12
