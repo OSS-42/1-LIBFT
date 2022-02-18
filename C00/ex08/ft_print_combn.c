@@ -12,41 +12,41 @@
 
 #include <unistd.h>
 
-void    ft_print_combn(int n);
-void    ft_print_comb1(int n);
+void    ft_putchar(char c);
+void    comb(int start, int n);
 
-void    ft_print_comb1(int n)
+void    ft_putchar(char c)
 {
-    char    a;
+    write(1, &c, 1);
+}
 
-    a = '0';
-    while (a <= '9')
+void    comb(int start, int n)
+{
+    int index;
+
+    if (n == 0)
     {
-        write(1, &a, 1);
-        if (a < '9')
-            write(1, ', ', 2);
-        a++;
+        ft_putchar(',');
+        ft_putchar(' ');
+        return ;
+    }
+    index = start + 1;
+    while (index < 10)
+    {
+        ft_putchar(start + 48);
+        ft_putchar(index + 48);
+        comb(index, n - 1);
+        index++;
     }
 }
 
 void    ft_print_combn(int n)
 {
-    if (n <= 0 && n >= 10)
-        return (0);
-    if (n == 1)
-        ft_print_comb1(n);
-    if (n >= 2)
-    {
-        while (n > 0)
-        {
-            ft_print_comb1(n);
-            n--;
-        }        
-    }
+    comb(0, n);
 }
 
 int main(void)
 {
-    ft_print_combn(2);
+    ft_print_combn(1);
     return (0);
 }
