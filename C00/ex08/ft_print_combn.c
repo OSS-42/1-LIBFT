@@ -84,16 +84,12 @@ void    increment(char *dest, int n, int pos, int i)
 
 void    updest(char *dest, int n, int pos, int i)
 {
-    int j;
-
-    j = 0;
     while (dest[pos] == i + '0')
     {
-        j++;
         pos--;
         i--;
     }
-    if (j > 0)
+    if (i < 9)
     {
         if (dest[pos] != '\0' && dest[pos] != '9')
         {
