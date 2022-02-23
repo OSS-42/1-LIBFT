@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void    rush(int x, int y);
-void    horizontal(int x);
-void    vertical(int x, int y);
+void	rush(int x, int y);
+void	horizontal(int x);
+void	vertical(int x);
 
-int main()
+int	main(void)
 {
-    rush(10, 10);
-    return (0);
+	rush(5, 5);
+	return (0);
 }

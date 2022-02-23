@@ -12,84 +12,91 @@
 
 #include <unistd.h>
 
-void    ft_putchar(char c);
+void	ft_putchar(char c);
+void	horizontal(int x);
 
-void    vertical(int x, int y)
+void	line(int x, int y);
+
+void	horizontal(int x)
 {
-    int     pos;
-    int     pos2;
-    char    c;
-    char    d;
+	int		pos;
+	char	c;
 
-    c = '|';
-    d = ' ';
-    pos2 = 2;
-    while (pos2 < y)
-    {
-        pos = 1;
-        ft_putchar(c);
-        pos++;
-        if (x > 1)
-        {
-            while (pos < x)
-            {
-                ft_putchar(d);
-                pos++;
-            }
-            ft_putchar(c);
-        }
-        ft_putchar('\n');
-        pos2++;
-    }
-    return ;
+	c = '-';
+	pos = 2;
+	while (pos < x)
+	{
+		ft_putchar(c);
+		pos++;
+	}
+	return ;
 }
 
-void    horizontal(int x)
+void	line(int x, int y)
 {
-    int     pos;
-    char    c;
+	char	*corner;
 
-    c = '-';
-    pos = 2;
-    while (pos < x)
-        {
-            ft_putchar(c);
-            pos++;
-        }
-    return ;
+	corner = "oooo";
+	if (x == 1 && y == 1)
+	{
+		ft_putchar(corner[0]);
+	}
+	if (y == 1)
+	{
+		ft_putchar(corner[0]);
+		horizontal(x);
+		if (x > 1)
+			ft_putchar(corner[1]);
+	}
+	if (y > 1)
+	{
+		ft_putchar(corner[2]);
+		horizontal(x);
+		if (x > 1)
+			ft_putchar(corner[3]);
+	}
+	ft_putchar('\n');
+	return ;
 }
 
-void    rush(int x, int y)
+void	vertical(int x)
 {
-    char    *corner;
-    int     height;
+	int		pos;
+	char	c;
+	char	d;
 
-    corner = "oooo";
-    if (x < 0 || y < 0)
-        return ;
-    if (x == 1 && y == 1)
-    {
-        ft_putchar(corner[0]);
-        return ;
-    }
-    height = 1;
-    if (height == 1)
-    {
-        ft_putchar(corner[0]);
-        horizontal(x);
-        if (x > 1)
-            ft_putchar(corner[1]);
-        ft_putchar('\n');
-    } 
-    if (height < y)
-        vertical(x, y);
-    if (y > 1)
-    {
-        ft_putchar(corner[2]);
-        horizontal(x);
-        if (x > 1)
-            ft_putchar(corner[3]);
-        ft_putchar('\n');
-    }
-    return ;
+	c = '|';
+	d = ' ';
+	pos = 1;
+	ft_putchar(c);
+	pos++;
+	if (x > 1)
+	{
+		while (pos < x)
+		{
+			ft_putchar(d);
+			pos++;
+		}
+		ft_putchar(c);
+	}
+	ft_putchar('\n');
+	return ;
+}
+
+void	rush(int x, int y)
+{
+	int		height;
+
+	if (x < 0 || y < 0)
+		return ;
+	line(x, y);
+	height = 2;
+	while (height < y)
+	{
+		vertical(x);
+		height++;
+	}
+	if (y > 1)
+		line(x, y);
+	return ;
 }
