@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 void    increment(char *dest, int n, int pos, int i);
 void    ft_putstr(char *dest);
@@ -138,10 +137,4 @@ void    ft_print_combn(int n)
     write(1, ", ", 2);
     increment(dest, n, pos, i);
     return ;
-}
-
-int main(void)
-{
-    ft_print_combn(7);
-    return (0);
 }
