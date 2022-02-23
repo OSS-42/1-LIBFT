@@ -3,30 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ewurstei <ewurstei@student.42quebec.com>   +#+  +:+       +#+        */
+/*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 09:36:40 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/01/25 15:56:15 by ewurstei         ###   ########.fr       */
+/*   Created: 2022/02/23 14:01:59 by ewurstei          #+#    #+#             */
+/*   Updated: 2022/02/23 14:01:59 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_swap(int *debtab, int *fintab)
+#include <stdio.h>
+
+void	ft_rev_int_tab(int *tab, int size)
 {
-  int buffer;
+	int	buffer;
+	int	index;
 
-  buffer = *debtab;
-  *debtab = *fintab;
-  *fintab = buffer;
-}
-
-void ft_rev_int_tab(int *tab, int size)
-{
-  int i;
-
-  i = 0;
-  while (i < size / 2)
-  {
-    ft_swap(tab + i, tab + size - 1 - i);
-    i++;
-  }
+	index = 0;
+	while (index < size / 2)
+	{
+		buffer = tab[index];
+		tab[index] = tab[size - 1 - index];
+		tab[size - 1 - index] = buffer;
+		index++;
+	}
 }
