@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 void	ft_base(char z);
 void	ft_putchar(char z);
@@ -32,12 +31,14 @@ void	ft_base(char z)
 
 void	ft_putstr_non_printable(char *str)
 {
-	int				i;
-	unsigned long	len;
+	int	i;
+	int	len;
 
+	len = 0;
+	while (str[len] != '\0')
+		len++;
 	i = 0;
-	printf("lenght : %lu\n", sizeof(str));
-	while (i < sizeof(str))
+	while (i < len)
 	{
 		if (str[i] == 0)
 		{
@@ -45,7 +46,7 @@ void	ft_putstr_non_printable(char *str)
 			ft_putchar(0);
 			ft_putchar(0);
 		}
-		if (str[i] > 0 && str[i] < 32 || str[i] == 127)
+		if ((str[i] > 0 && str[i] < 32) || str[i] == 127)
 		{
 			ft_putchar('\\');
 			ft_base(str[i]);

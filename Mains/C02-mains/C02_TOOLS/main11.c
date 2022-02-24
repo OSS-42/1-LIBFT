@@ -13,5 +13,5 @@ int main()
 	ft_putstr_non_printable(str);
     printf("\n\ntest2\nRetour attendu :\nCoucou\\0atu vas bien ?\nRetour fonction:\n");
     ft_putstr_non_printable(str2);
-    printf("\n***************************************************************");
+    printf("\n***************************************************************\n");
 }
