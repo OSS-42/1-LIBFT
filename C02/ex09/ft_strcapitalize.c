@@ -5,35 +5,47 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 20:04:35 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/02/02 21:34:13 by ewurstei         ###   ########.fr       */
+/*   Created: 2022/02/01 20:46:00 by ewurstei          #+#    #+#             */
+/*   Updated: 2022/02/09 14:13:10 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- #include <stdio.h>
+char	*ft_lowercase(char *str)
+{
+	int	i;
 
- char *ft_strcapitalize(char *str);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = str[i] + 32;
+		i++;
+	}
+	return (str);
+}
 
- char *ft_strcapitalize(char *str)
- {
- 	int		count;
- 	int		charnext;
- 	char	c;
+char	*ft_strcapitalize(char *str)
+{
+	int	count;
 
- 	count = 0;
- 	charnext = 1;
- 	while (str[count] != '\0')
- 	{
- 		c = str[count];
- 		if (charnext == 1 && c >= 'a' && c <= 'z')
- 			str[count] -= 32;
- 		else if (charnext == 0 && c >= 'A' && c <= 'Z')
- 			str[count] += 32;
- 		if (c < '0' || (c > '9' && c < 'A') || (c > 'Z' && c < 'a') || c > 122)
- 			charnext = 1;
- 		else
- 			charnext = 0;
- 		count++;
- 	}
- 	return (str);
- }
+	count = 0;
+	if (str[count] == 0)
+		return (str);
+	ft_lowercase(str);
+	if (str[0] >= 'a' && str[0] <= 'z')
+	{
+		str[0] = str[0] - 32;
+		count = 1;
+	}
+	while (str[count] != '\0')
+	{
+		if (str[count] < '0'
+			|| (str[count] > '9' && str[count] < 'A')
+			|| (str[count] > 'Z' && str[count] < 'a')
+			|| str[count] > 'z')
+			if (str[count + 1] >= 'a' && str[count + 1] <= 'z')
+				str[count + 1] = str[count + 1] - 32;
+		count++;
+	}
+	return (str);
+}

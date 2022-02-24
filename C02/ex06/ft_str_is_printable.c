@@ -6,22 +6,22 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 10:37:27 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/01/27 11:06:44 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/01/28 12:41:37 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_str_is_printable(char *str)
+int	ft_str_is_printable(char *str)
 {
-  int i;
+	int	i;
 
-  i = 0;
-  if (str[i] == '\0')
-    return (1);
-  while (str[i] != '\0')
-    {
-      if (str[i] < 32)
-        return (0);
-    i++;
-    }
-  return (1);
+	i = 0;
+	if (str[i] == '\0')
+		return (1);
+	while (str[i] != '\0')
+	{
+		if (str[i] < 32)
+			return (0);
+		i++;
+	}
+	return (1);
 }
