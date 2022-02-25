@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_strlen.c                                   :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ewurstei <ewurstei@student.42quebec.com>   +#+  +:+       +#+        */
+/*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/24 21:56:44 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/01/27 11:17:16 by ewurstei         ###   ########.fr       */
+/*   Created: 2022/02/25 14:15:19 by ewurstei          #+#    #+#             */
+/*   Updated: 2022/02/25 14:15:19 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <unistd.h>
-#include <stdio.h>
-
-int ft_strlen(char *str);
-
-int main(void)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-  int i;
-  char strTest[] = "Hubert Bonnisseur de la Barthe";
+	unsigned int	i;
 
-  i = ft_strlen(strTest);
-  printf("%d\n", i);
-  return (0);
+	i = 0;
+	while (src[i] != '\0' && i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (n - i > 0)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }

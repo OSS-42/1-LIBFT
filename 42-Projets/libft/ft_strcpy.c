@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_ultimate_div_mod.c                         :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ewurstei <ewurstei@student.42quebec.com>   +#+  +:+       +#+        */
+/*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 09:29:48 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/01/25 09:32:24 by ewurstei         ###   ########.fr       */
+/*   Created: 2022/02/25 14:14:45 by ewurstei          #+#    #+#             */
+/*   Updated: 2022/02/25 14:14:45 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void ft_ultimate_div_mod(int *a, int *b);
-
-int main(void)
+char	*ft_strcpy(char *dest, char *src)
 {
-  int a;
-  int b;
+	int	i;
 
-  a = 45;
-  b = 6;
-  ft_ultimate_div_mod(&a, &b);
-  printf("a / b = %d\n", a);
-  printf("a % b = %d\n", b);
-  return (0);
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

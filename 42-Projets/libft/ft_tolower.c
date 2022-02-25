@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_putstr.c                                   :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ewurstei <ewurstei@student.42quebec.com>   +#+  +:+       +#+        */
+/*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/24 20:07:27 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/01/25 08:55:02 by ewurstei         ###   ########.fr       */
+/*   Created: 2022/02/25 14:22:56 by ewurstei          #+#    #+#             */
+/*   Updated: 2022/02/25 14:22:56 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void ft_putstr(char *str);
-
-void ft_putchar(char c)
+char	*ft_tolower(char *str)
 {
-    write(1, &c, 1);
-}
+	int	i;
 
-int main(void)
-{
-  char strtest[] = "OSS 117";
-
-  ft_putstr(strtest);
-  return (0);
+	i = 0;
+	if (str[i] == '\0')
+		return (str);
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = str[i] + 32;
+		str[i] = str[i];
+	i++;
+	}
+	return (str);
 }

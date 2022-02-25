@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_ft.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ewurstei <ewurstei@student.42quebec.com>   +#+  +:+       +#+        */
+/*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/24 17:07:03 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/01/24 17:09:30 by ewurstei         ###   ########.fr       */
+/*   Created: 2022/02/25 14:21:22 by ewurstei          #+#    #+#             */
+/*   Updated: 2022/02/25 14:21:22 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void ft_ft(int *);
-
-int main(void)
+char	*ft_toupper(char *str)
 {
-  int nbr;
+	int	i;
 
-  nbr = 5;
-  ft_ft(&nbr);
-  printf("%d\n", nbr);
-  return (0);
+	i = 0;
+	if (str[i] == '\0')
+		return (str);
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = str[i] - 32;
+		str[i] = str[i];
+	i++;
+	}
+	return (str);
 }

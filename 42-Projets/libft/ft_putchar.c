@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ft_rev_int_tab.c                              :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 15:55:00 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/01/25 15:56:42 by ewurstei         ###   ########.fr       */
+/*   Created: 2022/01/19 13:57:15 by ewurstei          #+#    #+#             */
+/*   Updated: 2022/01/28 18:10:28 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-void	ft_rev_int_tab(int *tab, int size);
-
-int		main(void)
+void	ft_putchar(char c)
 {
-	int tab[214748364];
-	int i;
-	int size;
-
-	size = 2147483647;
-	i = 0;
-	while (i < size)
-	{
-		tab[i] = size - i;
-    printf("%d: %d\n", i + 1, tab[i]);
-		i++;
-	}
-	ft_rev_int_tab(tab, size);
-  printf("je swappe...\n");
-  i = 0;
-	while (i < size)
-	{
-		printf("%d: %d\n", i + 1, tab[i]);
-		i++;
-	}
+	write(1, &c, 1);
 }
