@@ -14,8 +14,8 @@
 
 void	*memchr(const void *s, int c, size_t n)
 {
-	char	*str;
-	int		i;
+	const char	*str;
+	int			i;
 
 	i = 0;
 	str = s;
