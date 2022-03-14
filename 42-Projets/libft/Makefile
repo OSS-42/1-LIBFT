@@ -9,7 +9,7 @@ LIBCFUN = \
 		ft_strlcat.c ft_strlen.c ft_strncat.c ft_strncmp.c ft_strncpy.c \
 		ft_strstr.c ft_tolower.c ft_toupper.c  
 
-LIBCBON = \
+#LIBCBON = \
 #=================== TO BE CORRECTED =====================#
 # ft_memchr.c
 
