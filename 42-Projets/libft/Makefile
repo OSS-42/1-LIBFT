@@ -1,7 +1,7 @@
 NAME = libft.a
 
 LIBCFUN = \
-		ft_atoi.c ft_bzero.c  ft_isalpha.c  \
+		ft_atoi.c ft_bzero.c  ft_isalpha.c ft_isalnum.c ft_isascii.c\
 		ft_isdigit.c ft_isprint.c \
 		ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c \
 		ft_putchar.c ft_putnbr.c ft_putstr.c \
@@ -14,7 +14,7 @@ LIBCFUN = \
 # ft_memchr.c
 
 #=================== NOT YET AVAILABLE ===================#
-# ft_isalnum.c ft_isascii.c ft_strchr.c ft_strnstr.c
+#   ft_strchr.c ft_strnstr.c
 # ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c ft_strclr.c
 # ft_striter.c ft_striteri.c ft_strmap.c ft_strmapi.c ft_strequ.c
 # ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_strsplit.c

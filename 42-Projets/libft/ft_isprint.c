@@ -10,18 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char *str)
+int	ft_isprint(int c)
 {
-	int	i;
-
-	i = 0;
-	if (str[i] == '\0')
-		return (1);
-	while (str[i] != '\0')
-	{
-		if (str[i] < 32)
-			return (0);
-		i++;
-	}
+	if (c < 32)
+		return (0);
 	return (1);
 }
