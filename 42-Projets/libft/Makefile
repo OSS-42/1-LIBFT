@@ -25,11 +25,11 @@ LIBCFUN = \
 #		ft_lstmap.c 
 #=========================================================#
 
-OBJFUN := ${LIBCFUN:c=o}
-#OBJBON := ${LIBCBON:c=o}
+OBJFUN := $(LIBCFUN:c=o)
+#OBJBON := $(LIBCBON:c=o)
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -I
+CFLAGS = -Wall -Werror -Wextra -I -nostartfiles
 RM = rm -f
 AR = ar rcs
 
