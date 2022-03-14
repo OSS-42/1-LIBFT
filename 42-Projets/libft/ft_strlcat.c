@@ -10,15 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	lenght;
-
-	lenght = 0;
-	while (str[lenght] != '\0')
-		lenght++;
-	return (lenght);
-}
+int	ft_strlen(char *str);
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {

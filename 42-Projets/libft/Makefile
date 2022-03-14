@@ -47,9 +47,9 @@ fclean: clean
 re: fclean all
 
 #For Ubuntu in WSL
-#so:
-#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(LIBCFUN)
-#	gcc -nostartfiles -shared -o libft.so $(OBJFUN)
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(LIBCFUN)
+	gcc -nostartfiles -shared -o libft.so $(OBJFUN)
 
 bonus: $(OBJFUN) $(OBJBON)
 	$(AR) $(NAME) $(OBJFUN) $(OBJBON)
