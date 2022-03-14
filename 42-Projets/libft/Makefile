@@ -29,7 +29,7 @@ OBJFUN := ${LIBCFUN:c=o}
 #OBJBON := ${LIBCBON:c=o}
 
 CC = gcc
-FLAGS = -Wall -Werror -Wextra -I
+CFLAGS = -Wall -Werror -Wextra -I
 RM = rm -f
 AR = ar rcs
 
@@ -39,12 +39,17 @@ $(NAME):	$(OBJFUN)
 all:	$(NAME)
 
 clean:
-	$(RM) $(OBJFUN)
+	$(RM) $(OBJFUN) $(OBJBON)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(OBJBON)
 
 re: fclean all
+
+#For Ubuntu in WSL
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(LIBCFUN)
+	gcc -nostartfiles -shared -o libft.so $(OBJFUN)
 
 bonus: $(OBJFUN) $(OBJBON)
 	$(AR) $(NAME) $(OBJFUN) $(OBJBON)
