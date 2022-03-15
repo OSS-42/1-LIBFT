@@ -42,7 +42,7 @@ clean:
 	$(RM) $(OBJFUN) $(OBJBON)
 
 fclean: clean
-	$(RM) $(NAME) $(OBJBON)
+	$(RM) $(NAME) $(OBJBON) *.so *.out
 
 re: fclean all
 
