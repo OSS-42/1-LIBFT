@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncomp.c                                      :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 14:29:16 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/02/25 14:29:16 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/04 10:52:14 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, unsigned int n)
 {
 	unsigned int	i;
 
@@ -21,5 +21,5 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	{
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
