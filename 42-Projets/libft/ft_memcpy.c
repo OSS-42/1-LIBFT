@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 13:52:20 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/05 11:25:45 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/05 13:47:29 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*dest2;
 	unsigned char	*src2;
 
