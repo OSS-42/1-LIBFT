@@ -6,9 +6,11 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 14:29:16 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/05 09:50:18 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/05 10:35:42 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
