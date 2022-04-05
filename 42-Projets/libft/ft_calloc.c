@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 14:11:20 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/05 13:56:54 by ewurstei         ###   ########.fr       */
+/*   Created: 2022/04/05 14:53:26 by ewurstei          #+#    #+#             */
+/*   Updated: 2022/04/05 15:17:26 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void *ft_calloc(size_t count, size_t size)
 {
-	char	*buffer;
+    void *mem;
 
-	buffer = (char *)malloc(sizeof(char) * n);
-	if (buffer == NULL)
-		return (NULL);
-	if (dest == NULL && src == NULL)
-		return (NULL);
-	ft_memcpy(buffer, src, n);
-	ft_memcpy(dest, buffer, n);
-	free(buffer);
-	return (dest);
+    if (count == NULL || size == NULL)
+        return (NULL);
+    mem = malloc(count * size);
+    if (mem == NULL)
+        return (NULL);
+    ft_bzero(mem, size * count);
+    return (mem);
 }
