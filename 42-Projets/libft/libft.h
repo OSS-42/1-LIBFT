@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:23:32 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/05 10:06:08 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/05 10:18:33 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char			*ft_strdup(char *src);
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 int				ft_strlen(char *str);
 char			*ft_strncat(char *dest, char *src, unsigned int nb);
-int				ft_strncmp(char *s1, char *s2, size_t n);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strncpy(char *dest, char *src, unsigned int n);
 char			*ft_strstr(char *str, char *to_find);
 int				ft_tolower(int c);
