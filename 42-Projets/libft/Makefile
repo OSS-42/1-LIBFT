@@ -7,12 +7,14 @@ LIBCFUN = \
 		ft_memcpy.c ft_memmove.c ft_strlcat.c \  
 		ft_toupper.c ft_tolower.c \ 
 		ft_strncmp.c ft_memchr.c ft_memcmp.c ft_atoi.c \
-		ft_calloc.c  ft_strdup.c \
+		ft_calloc.c ft_strdup.c \
+
 #============= NON-LIBC FUNCTIONS but MANDATORY =========# 
 		ft_putchar.c ft_putnbr.c ft_putstr.c \
-		ft_strcat.c  ft_strcmp.c ft_strcpy.c \
-		ft_strncat.c  ft_strncpy.c \
-		ft_strstr.c  \
+		ft_strcat.c ft_strcmp.c ft_strcpy.c \
+		ft_strncat.c ft_strncpy.c \
+		ft_strstr.c \
+		
 #=================== NOT YET AVAILABLE ==================#
 #===================== LIBC FUNCTIONS ===================#
 # ft_strlcpy.c ft_strchr.c ft_strrchr.c ft_strnstr.c
@@ -29,6 +31,7 @@ LIBCFUN = \
 # ft_strclr.c ft_striter.c ft_strmap.c ft_strequ.c \
 # ft_strnequ.c ft_strsplit.c ft_putendl.c ft_lstdel.c \
 #=========================================================#
+
 #LIBCBON = \
 
 OBJFUN := $(LIBCFUN:c=o)
