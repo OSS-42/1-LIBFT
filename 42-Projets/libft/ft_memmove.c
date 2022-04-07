@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:11:20 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/02/28 14:11:20 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/05 13:56:54 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,15 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	const char	*buffer;
-	char		*dest2;
-	int			i;
+	char	*buffer;
 
-	dest2 = dest;
-	buffer = src;
-	i = 0;
-	while (n > 0)
-	{
-		dest2[i] = buffer[i];
-		i++;
-		n--;
-	}
-	dest2[i] = '\0';
+	buffer = (char *)malloc(sizeof(char) * n);
+	if (buffer == NULL)
+		return (NULL);
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	ft_memcpy(buffer, src, n);
+	ft_memcpy(dest, buffer, n);
+	free(buffer);
 	return (dest);
 }
