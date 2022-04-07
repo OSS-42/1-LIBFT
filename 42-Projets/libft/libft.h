@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:23:32 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/07 15:14:27 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/07 16:39:28 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void			ft_putchar(char c);
 void			ft_putnbr(int nb);
 void			ft_putstr(char *str);
 char			*ft_strcat(char *dest, char *src);
+char			*ft_strchr(const char *s, int c);
 int				ft_strcmp(const char *s1, const char *s2);
 char			*ft_strcpy(char *dest, char *src);
 char			*ft_strdup(char *src);
