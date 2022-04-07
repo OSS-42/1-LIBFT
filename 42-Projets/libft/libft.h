@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:23:32 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/07 10:35:33 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/07 13:27:21 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int				ft_isprint(int c);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
-void			*ft_memmove(void *dest, const void *src, size_t n);
+void			*ft_memmove(void *dest, const void *src, size_t len);
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_putchar(char c);
 void			ft_putnbr(int nb);
