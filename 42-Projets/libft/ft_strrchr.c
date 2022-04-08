@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 16:42:19 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/07 16:47:15 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/08 09:57:06 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	a;
+	int		len;
 	char	*src;
-	size_t	len;
 
 	src = (char *)s;
 	len = ft_strlen(src);
-	a = (char)c;
-	while (len > 0)
+	if (c == 0)
+		return (&src[len]);
+	while (len >= 0)
 	{
-		if (src[len] == a)
+		if (s[len] == (char)c)
 			return (&src[len]);
 		len--;
 	}

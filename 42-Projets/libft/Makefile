@@ -8,6 +8,7 @@ LIBCFUN = \
 		ft_strcat.c  ft_strcmp.c ft_strcpy.c ft_strdup.c \
 		ft_strlcat.c ft_strlen.c ft_strncat.c ft_strncmp.c ft_strncpy.c \
 		ft_strstr.c ft_tolower.c ft_toupper.c ft_calloc.c \
+		ft_strlcpy.c \
 
 #LIBCBON = \
 
