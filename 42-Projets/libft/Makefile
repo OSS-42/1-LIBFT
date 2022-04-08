@@ -7,13 +7,15 @@ LIBCFUN = \
 		ft_putchar.c ft_putnbr.c ft_putstr.c ft_memchr.c\
 		ft_strcat.c  ft_strcmp.c ft_strcpy.c ft_strdup.c \
 		ft_strlcat.c ft_strlen.c ft_strncat.c ft_strncmp.c ft_strncpy.c \
-		ft_strstr.c ft_tolower.c ft_toupper.c ft_calloc.c \
-		ft_strlcpy.c \
+		ft_tolower.c ft_toupper.c ft_calloc.c \
+		ft_strlcpy.c ft_strnstr.c \
 
 #LIBCBON = \
 
+#=================== NOT ASKED FOR ===================#
+# ft_strstr.c
 #=================== NOT YET AVAILABLE ===================#
-#  ft_strnstr.c
+#  
 # ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c ft_strclr.c
 # ft_striter.c ft_striteri.c ft_strmap.c ft_strmapi.c ft_strequ.c
 # ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_strsplit.c
