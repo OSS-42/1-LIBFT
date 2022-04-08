@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:23:32 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/07 13:27:21 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/08 11:23:48 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,14 @@ void			*ft_memset(void *s, int c, size_t n);
 void			ft_putchar(char c);
 void			ft_putnbr(int nb);
 void			ft_putstr(char *str);
+char			*ft_strrchr(const char *s, int c);
 char			*ft_strcat(char *dest, char *src);
+char			*ft_strchr(const char *s, int c);
 int				ft_strcmp(const char *s1, const char *s2);
 char			*ft_strcpy(char *dest, char *src);
 char			*ft_strdup(char *src);
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t			ft_strlcat(char *dest, const char *src, size_t dstsize);
 int				ft_strlen(char *str);
 char			*ft_strncat(char *dest, char *src, unsigned int nb);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
