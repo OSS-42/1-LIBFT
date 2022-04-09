@@ -17,10 +17,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	size_t	i;
 	size_t	j;
 	char	*src;
-	char	*to_find;
 
 	src = (char *)haystack;
-	to_find = (char *)needle;
 	i = 0;
 	if (needle[i] == '\0')
 		return (src);
