@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:23:32 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/08 14:48:57 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/11 20:32:24 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void			*ft_memset(void *s, int c, size_t n);
 void			ft_putchar(char c);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putnbr(int nb);
+void			ft_putnbr_fd(int nb, int fd);
 void			ft_putstr(char *str);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
