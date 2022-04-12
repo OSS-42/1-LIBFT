@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:23:32 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/08 11:23:48 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/11 21:44:19 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,12 @@ void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t len);
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_putchar(char c);
+void			ft_putchar_fd(char c, int fd);
 void			ft_putnbr(int nb);
+void			ft_putnbr_fd(int nb, int fd);
 void			ft_putstr(char *str);
+void			ft_putstr_fd(char *s, int fd);
+void			ft_putendl_fd(char *s, int fd);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strcat(char *dest, char *src);
 char			*ft_strchr(const char *s, int c);
@@ -46,7 +50,9 @@ int				ft_strlen(char *str);
 char			*ft_strncat(char *dest, char *src, unsigned int nb);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strncpy(char *dest, char *src, unsigned int n);
-char			*ft_strstr(char *str, char *to_find);
+char			*ft_strnstr(const char *haystack, const char *needle, size_t n);
+//char			*ft_strstr(char *str, char *to_find);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 

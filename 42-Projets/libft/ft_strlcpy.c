@@ -19,7 +19,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	slen = ft_strlen((char *)src);
 	i = 0;
+<<<<<<< HEAD
 	if (dstsize > 0)
+=======
+	if (dstsize <= 0)
+		return (slen);
+	while (src[i] != '\0' && i < dstsize - 1)
+>>>>>>> 1bcf3237b8723bdfabcb782a037d42f324396db1
 	{
 		while (src[i] != '\0' && i < dstsize - 1)
 		{

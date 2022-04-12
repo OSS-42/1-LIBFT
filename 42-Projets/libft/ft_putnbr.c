@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ewurstei <ewurtei@student.42quebec.com>    +#+  +:+       +#+        */
+/*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 18:03:32 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/01/29 14:51:36 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/11 20:25:40 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c);
+#include "libft.h"
 
 void	ft_putnbr(int nb)
 {

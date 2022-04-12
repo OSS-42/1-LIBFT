@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ewurstei <ewurstei@student.42quebec.com>   +#+  +:+       +#+        */
+/*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 19:35:26 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/01/25 08:56:34 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/11 20:24:49 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include "libft.h"
 
 void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
+	if (!str)
+		return ;
 	while (str[i] != '\0')
 	{
 		ft_putchar(str[i]);
