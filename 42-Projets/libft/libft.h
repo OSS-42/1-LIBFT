@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:23:32 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/12 09:50:59 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/12 10:57:14 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ char			*ft_strncpy(char *dest, char *src, unsigned int n);
 char			*ft_strnstr(const char *haystack, const char *needle, size_t n);
 //char			*ft_strstr(char *str, char *to_find);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			*ft_strtrim(char const *s1, char const *set);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 
