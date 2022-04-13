@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 13:24:56 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/13 16:27:59 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/13 16:29:02 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ static unsigned int	ft_wordcount(char *s, char c)
 		if (s[i] && s[i] != c)
 		{
 			dst[wordcount][i] = (char **)malloc(sizeof(char) * 2);
+			//malloc au fur et à mesure que le programme lis les caractère du 'mot'.
+			//à chaque nouveau mot, on passe à la row d'après.
 			if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
 				wordcount++;
 			i++;
