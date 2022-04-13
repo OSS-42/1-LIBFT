@@ -10,12 +10,12 @@ LIBCFUN = \
 		ft_tolower.c ft_toupper.c ft_calloc.c \
 		ft_strlcpy.c ft_strnstr.c ft_putchar_fd.c ft_putstr_fd.c \
 		ft_putendl_fd.c ft_putnbr_fd.c ft_substr.c ft_strjoin.c \
-		ft_strtrim.c ft_itoa.c\
+		ft_strtrim.c ft_itoa.c ft_strmapi.c \
 
-#LIBCBON = \
+#LIBCBON =  \
 
 #=================== NOT ASKED FOR ===================#
-# ft_strstr.c
+# ft_strmap.c ft_strstr.c 
 #=================== NOT YET AVAILABLE ===================#
 #  
 # ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c ft_strclr.c
