@@ -18,7 +18,7 @@ static int	ft_size(long nb);
 int	ft_size(long nb)
 {
 	int	count;
-	
+
 	count = 0;
 	if (nb < 0)
 	{
@@ -39,16 +39,14 @@ char	*ft_itoa(int n)
 	int		size;
 	long	nb;
 
-	nb = n;	
+	nb = n;
 	size = ft_size(n);
-	if (!(dst = (char *)malloc(sizeof(char) * (size + 1))))
+	dst = (char *)malloc(sizeof(char) * (size + 1));
+	if (!dst)
 		return (NULL);
 	dst[size + 1] = '\0';
 	if (nb == 0)
-	{
 		dst[0] = 48;
-		return (dst);
-	}
 	if (nb < 0)
 	{
 		dst[0] = '-';
