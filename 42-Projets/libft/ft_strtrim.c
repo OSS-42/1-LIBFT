@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 10:21:12 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/12 15:54:34 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/12 19:41:17 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (dst = ft_substr((char *)s1, delstart, (slen1 - delstart)));
 }
-
-/*int	main(void)
-{
-	char	s1[] = "           ";
-	char	set[] = "";
-
-	printf("s1 : %s\n", s1);
-	printf("set: %s\n", set);
-	printf("ft_: %s\n", ft_strtrim(s1, set));
-	return (0);
-}*/
