@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-/*static void	*ft_wordstorage(char *ptr, char *str, size_t wordlen, size_t i)
+static void	*ft_wordstorage(char *ptr, char *str, size_t wordlen, size_t i)
 {
 	ptr = (char *)malloc(sizeof(char) * (wordlen + 1));
 	ptr[wordlen + 1] = '\0';
@@ -24,17 +24,18 @@
 	return (ptr);
 }
 
-static void	**ft_rowsalloc(void **ptr, size_t size)
+static char	**ft_rowsalloc(char **ptr, size_t size)
 {
 	char	**new_ptr;
 
-	**new_ptr = (char **)malloc(sizeof(char) * size + 1);
+	**new_ptr = (char **)malloc(sizeof(char) * size);
 	ft_memcpy(new_ptr, ptr, size);
 	free(ptr);
 	return (new_ptr);
 }
-*/
-static unsigned int	ft_wordcount(char *s, char c)
+
+//static unsigned int	ft_wordcount(char *s, char c)
+char **ft_split(const char *s, char c)
 {
 	unsigned int	i;
 	unsigned int	wordcount;
@@ -57,22 +58,23 @@ static unsigned int	ft_wordcount(char *s, char c)
 				wordcount++;
 			i++;
 			wordlen++;
-			write(1, &s[i - 1], 1);
+//			write(1, &s[i - 1], 1);
 			if (wordcount > cycles)
 			{
-				write(1, "\n", 1);
-				printf("wordlen : %d\n", wordlen);
-//				dst = ft_rowsralloc(**dst, wordcount);
-//				dst = ft_wordstorage(*dst, s, wordlen, i);
+//				write(1, "\n", 1);
+//				printf("wordlen : %d\n", wordlen);
+				dst = ft_rowsalloc(**dst, wordcount);
+				dst = ft_wordstorage(*dst, (char *)s, wordlen, i);
 				wordlen = 0;
 			}
 		}
 	}
-//	return (dst);
-	return (wordcount);
+	return (dst);
+//	return (wordcount);
 }
 
-/*char **ft_split(const char *s, char c)
+/*
+char **ft_split(const char *s, char c)
 {
 	unsigned int	i;
 	unsigned int	size;
@@ -96,7 +98,7 @@ static unsigned int	ft_wordcount(char *s, char c)
 	}
 	
 	return (dst);
-}*/
+}*
 
 int main (void)
 {
@@ -115,6 +117,8 @@ int main (void)
 
 	return (0);
 }
+
+*/
 
 /*	printf("s1 : %s\n", s1);
 	printf("s2 : %s\n", s2);
