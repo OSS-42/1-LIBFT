@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 14:23:32 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/19 14:00:36 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/19 14:24:25 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char			*ft_strtrim(char const *s1, char const *set);
 char			**ft_split(const char *s, char c);
 char			*ft_itoa(int n);
 char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
-ft_striteri();
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
@@ -62,7 +62,7 @@ void			ft_putnbr_fd(int nb, int fd);
 //void			ft_putnbr(int nb);
 //void			ft_putstr(char *str);
 //char			*ft_strcat(char *dest, const char *src);
-//int				ft_strcmp(const char *s1, const char *s2);
+//int			ft_strcmp(const char *s1, const char *s2);
 //char			*ft_strcpy(char *dest, const char *src);
 //char			*ft_strmap(const char *s, char (*f)(char));
 //char			*ft_strncat(char *dest, const char *src, size_t n);
