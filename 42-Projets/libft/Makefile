@@ -9,50 +9,59 @@ LIBCFUN = \
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
 		ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c  ft_putnbr_fd.c \
 
-
-#LIBCBON =  \
-
-#=================== DONE BUT NOT ASKED FOR ===================#
-# ft_strmap.c ft_strstr.c ft_strcat.c  ft_strcmp.c ft_strcpy.c
-# ft_strncat.c  ft_strncpy.c 
-# ft_putchar.c ft_putnbr.c ft_putstr.c
-#====================== TO DO =================================#
-# ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter
-# ft_lstmap.c 
-#=================== NOT ASK FOR ===================#
-# ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c ft_strclr.c
-# ft_striter.c ft_striteri.c ft_strequ.c
-# ft_strnequ.c ft_putendl.c 
-#=========================================================#
-
-OBJFUN := $(LIBCFUN:c=o)
-#OBJBON := $(LIBCBON:c=o)
+LIBCBON = ft_lstnew.c
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -I -nostartfiles
-RM = rm -f
-AR = ar rcs
 
-$(NAME):	$(OBJFUN)
-	$(AR) $(NAME) $(OBJFUN)
+CFLAGS = -Wall -Werror -Wextra #-I -nostartfiles
+
+RM = rm -f
+
+ARMAN = ar rcs
+
+ARBON = ar cs
+
+OBJFUN = $(LIBCFUN:.c=.o)
+OBJBON = $(LIBCBON:.c=.o)
 
 all:	$(NAME)
+
+$(NAME):	$(OBJFUN)
+	$(ARMAN) $(NAME) $(OBJFUN)
+
+# $(OBJFUN): 
+# 	$(CC) $(CFLAGS) $(LIBCFUN) $(OBJFUN)
+# 
+# $(OBJBON):
+# 	$(CC) $(CFLAGS) $(LIBCBON) $(OBJBON)
 
 clean:
 	$(RM) $(OBJFUN) $(OBJBON)
 
 fclean: clean
-	$(RM) $(NAME) $(OBJBON) *.so *.out
+	$(RM) $(NAME)
 
 re: fclean all
 
-#============For Ubuntu in WSL====================
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(LIBCFUN)
-	gcc -nostartfiles -shared -o libft.so $(OBJFUN)
-#=================================================
+#==================== For Ubuntu in WSL =====================#
+#so:
+#	$(CC) -nostartfiles -fPIC $(CFLAGS) $(LIBCFUN) $(LIBCBON)
+#	gcc -nostartfiles -shared -o libft.so $(OBJFUN) $(OBJBON)
+#============================================================#
 
-bonus: $(OBJFUN) $(OBJBON)
-	$(AR) $(NAME) $(OBJFUN) $(OBJBON)
+bonus: $(NAME) $(OBJFUN)
+	$(ARBON) $(NAME) $(OBJBON)
 
 .PHONY: all clean fclean re bonus
+
+#=================== DONE BUT NOT ASKED FOR ==================#
+# ft_strmap.c ft_strstr.c ft_strcat.c  ft_strcmp.c ft_strcpy.c
+# ft_strncat.c  ft_strncpy.c 
+# ft_putchar.c ft_putnbr.c ft_putstr.c
+#=========================== TO DO ===========================#
+# ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter
+# ft_lstmap.c 
+#======================== NOT ASK FOR ========================#
+# ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c ft_strclr.c
+# ft_striter.c ft_strequ.c ft_strnequ.c ft_putendl.c 
+#=============================================================#
