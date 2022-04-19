@@ -12,117 +12,85 @@
 
 #include "libft.h"
 
-static void	*ft_wordstorage(char *ptr, char *str, size_t wordlen, size_t i)
-{
-	ptr = (char *)malloc(sizeof(char) * (wordlen + 1));
-	ptr[wordlen + 1] = '\0';
-	while (wordlen > 0)
-	{
-		ptr[wordlen] = str[wordlen + i]; 
-		wordlen--;
-	}
-	return (ptr);
-}
-
-static char	**ft_rowsalloc(char **ptr, size_t size)
-{
-	char	**new_ptr;
-
-	**new_ptr = (char **)malloc(sizeof(char) * size);
-	ft_memcpy(new_ptr, ptr, size);
-	free(ptr);
-	return (new_ptr);
-}
-
-//static unsigned int	ft_wordcount(char *s, char c)
-char **ft_split(const char *s, char c)
+static unsigned int	ft_wordcount(char *s, char c)
 {
 	unsigned int	i;
 	unsigned int	wordcount;
-	unsigned int	cycles;
-	unsigned int	wordlen;
-	char			**dst;
 
 	i = 0;
 	wordcount = 0;
-	wordlen = 0;
-	cycles = 0;
 	while (s[i])
 	{
-		if (s[i] && s[i] == c)
+		while (s[i] == c)
 			i++;
-		if (s[i] && s[i] != c)
-		{
-			cycles = wordcount;
-			if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
-				wordcount++;
+		if (s[i] != c)
+			wordcount++;
+		while (s[i] && s[i] != c)
 			i++;
-			wordlen++;
-//			write(1, &s[i - 1], 1);
-			if (wordcount > cycles)
-			{
-//				write(1, "\n", 1);
-//				printf("wordlen : %d\n", wordlen);
-				dst = ft_rowsalloc(**dst, wordcount);
-				dst = ft_wordstorage(*dst, (char *)s, wordlen, i);
-				wordlen = 0;
-			}
-		}
 	}
-	return (dst);
-//	return (wordcount);
+	return (wordcount);
 }
 
-/*
-char **ft_split(const char *s, char c)
+static char	*ft_wordstorage(char *s, int i, unsigned int wordlen)
+{
+	char			*word;
+	unsigned int	pos;
+
+	pos = 0;
+	word = (char *)malloc(sizeof(char) * (wordlen + 1));
+	if (!word)
+		return (NULL);
+	while (pos < wordlen)
+	{
+		word[pos] = s[i];
+		pos++;
+	}
+	word[pos + 1] = '\0';
+	return (word);
+}
+
+char	**ft_split(const char *s, char c)
 {
 	unsigned int	i;
-	unsigned int	size;
-	unsigned int	wordcount;
-	char 			**dst;
-	
+	unsigned int	row;
+	unsigned int	wordlen;
+	char			**tab;
+
 	if (!s)
 		return (NULL);
-
-	wordcount = ft_wordcount((char *)s, c);
-
+	tab = (char **)malloc(sizeof(char *) * (ft_wordcount((char *)s, c) + 1));
+	if (!tab)
+		return (NULL);
 	i = 0;
-	while (wordcount > 0)
+	row = 0;
+	while (s[i])
 	{
-		while (s[i])
-		{
-			
+		while (s[i] == c)
 			i++;
+		wordlen = 0;
+		while (s[i + wordlen] && s[i + wordlen] != c)
+			wordlen++;
+		if (i < wordlen)
+		{
+			tab[row] = ft_wordstorage((char *)s, i, wordlen);
+			row++;
 		}
-		wordcount--;
 	}
-	
-	return (dst);
-}*
-
-int main (void)
-{
-	char	s1[] = "     Please   Split   Me   !     ";
-	char	s2[] = "OSS117 - Alerte Rouge en Afrique Noire !";
-	char	s3[] = "OSS117 ";
-	char	s4[] = " OSS117";
-	char	s5[] = "OSS117";
-	char	c = ' ';
-
-	printf("wordcount s1 (4) : %u\n", ft_wordcount(s1, c));
-	printf("wordcount s2 (8) : %u\n", ft_wordcount(s2, c));
-	printf("wordcount s3 (1) : %u\n", ft_wordcount(s3, c));
-	printf("wordcount s4 (1) : %u\n", ft_wordcount(s4, c));
-	printf("wordcount s5 (1) : %u\n", ft_wordcount(s5, c));
-
-	return (0);
+	tab[row] = NULL;
+	return (tab);
 }
 
-*/
+int	main (void)
+{
+	char **tab;
+	int i;
 
-/*	printf("s1 : %s\n", s1);
-	printf("s2 : %s\n", s2);
-	printf("ch : %c\n", c);
-	printf("fts1 : %s\n", **ft_split(*s1, c));
-	printf("fts2 : %s\n", **ft_split(*s2, c));*/
-	
+	i = 0;
+	while (i < 9)
+	{
+		tab = ft_split("OSS 117 - Alerte Rouge en Afrique Noire", ' ');
+		printf("mot #%d : %s\n", i, tab[i]);
+		i++;
+	}
+	return (0);
+}
