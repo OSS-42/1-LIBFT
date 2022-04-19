@@ -12,57 +12,90 @@
 
 #include "libft.h"
 
+<<<<<<< HEAD
 /*
 static void	*ft_wordstorage(char *ptr, char *str, size_t wordlen, size_t i)
+=======
+static unsigned int	ft_wordcount(char *s, char c)
+>>>>>>> 5773c9fe379be50bebc78556697d5657da384c91
 {
-	ptr = (char *)malloc(sizeof(char) * (wordlen + 1));
-	ptr[wordlen + 1] = '\0';
-	while (wordlen > 0)
+	unsigned int	i;
+	unsigned int	wordcount;
+
+	i = 0;
+	wordcount = 0;
+	while (s[i])
 	{
-		ptr[wordlen] = str[wordlen + i]; 
-		wordlen--;
+		while (s[i] == c)
+			i++;
+		if (s[i] != c)
+			wordcount++;
+		while (s[i] && s[i] != c)
+			i++;
 	}
-	return (ptr);
+	return (wordcount);
 }
 */
 
+<<<<<<< HEAD
 /*
 static char	**ft_rowsalloc(char *ptr, size_t row)
+=======
+static char	*ft_wordstorage(char *s, int i, unsigned int wordlen)
+>>>>>>> 5773c9fe379be50bebc78556697d5657da384c91
 {
-	char	**new_ptr;
+	char			*word;
+	unsigned int	pos;
 
+<<<<<<< HEAD
 	new_ptr = (char **)malloc(sizeof(char) * row);
 	ft_memmove(new_ptr, ptr, row);
 	free(ptr);
 	return (new_ptr);
+=======
+	pos = 0;
+	word = (char *)malloc(sizeof(char) * (wordlen + 1));
+	if (!word)
+		return (NULL);
+	while (pos < wordlen)
+	{
+		word[pos] = s[i];
+		pos++;
+	}
+	word[pos + 1] = '\0';
+	return (word);
+>>>>>>> 5773c9fe379be50bebc78556697d5657da384c91
 }
 */
 
-//static unsigned int	ft_wordcount(char *s, char c)
-char **ft_split(const char *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	unsigned int	i;
-	unsigned int	wordcount;
-	unsigned int	cycles;
+	unsigned int	row;
 	unsigned int	wordlen;
+<<<<<<< HEAD
 	char			**dst;
 	
 	dst = NULL;
+=======
+	char			**tab;
+
+	if (!s)
+		return (NULL);
+	tab = (char **)malloc(sizeof(char *) * (ft_wordcount((char *)s, c) + 1));
+	if (!tab)
+		return (NULL);
+>>>>>>> 5773c9fe379be50bebc78556697d5657da384c91
 	i = 0;
-	wordcount = 0;
-	wordlen = 0;
-	cycles = 0;
+	row = 0;
 	while (s[i])
 	{
-		if (s[i] && s[i] == c)
+		while (s[i] == c)
 			i++;
-		if (s[i] && s[i] != c)
-		{
-			cycles = wordcount;
-			if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
-				wordcount++;
-			i++;
+		wordlen = 0;
+		while (s[i + wordlen] && s[i + wordlen] != c)
 			wordlen++;
+<<<<<<< HEAD
 //			write(1, &s[i - 1], 1);
 			if (wordcount > cycles)
 			{
@@ -78,14 +111,21 @@ char **ft_split(const char *s, char c)
 				}
 //				wordlen = 0;
 			}
+=======
+		if (i < wordlen)
+		{
+			tab[row] = ft_wordstorage((char *)s, i, wordlen);
+			row++;
+>>>>>>> 5773c9fe379be50bebc78556697d5657da384c91
 		}
 		*dst[wordcount] = (char *)malloc(sizeof(char) * 1);
 		dst[wordcount][0] = '\0';
 	}
-	return (dst);
-//	return (wordcount);
+	tab[row] = NULL;
+	return (tab);
 }
 
+<<<<<<< HEAD
 int main (void)
 {
 	unsigned int	i;
@@ -135,3 +175,19 @@ int main (void)
 }
 
 */
+=======
+int	main (void)
+{
+	char **tab;
+	int i;
+
+	i = 0;
+	while (i < 9)
+	{
+		tab = ft_split("OSS 117 - Alerte Rouge en Afrique Noire", ' ');
+		printf("mot #%d : %s\n", i, tab[i]);
+		i++;
+	}
+	return (0);
+}
+>>>>>>> 5773c9fe379be50bebc78556697d5657da384c91
