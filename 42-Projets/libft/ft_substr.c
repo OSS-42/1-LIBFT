@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+        
+	+:+     */
+/*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+      
+	+#+        */
+/*                                                +#+#+#+#+#+  
+	+#+           */
 /*   Created: 2022/04/11 21:02:55 by ewurstei          #+#    #+#             */
 /*   Updated: 2022/04/11 21:02:55 by ewurstei         ###   ########.fr       */
 /*                                                                            */
@@ -18,23 +21,25 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*dst;
 	size_t	slen;
 
-	i = 0;
 	if (!s)
 		return (NULL);
 	slen = ft_strlen((char *)s);
+	if (slen < len)
+		len = slen;
+	if (slen <= start)
+		len = 0;
 	dst = (char *)malloc(sizeof(char) * (len + 1));
-	if (dst == NULL)
+	if (!dst)
 		return (NULL);
+	i = 0;
 	if (slen <= start)
 	{
 		dst[i] = '\0';
 		return (dst);
 	}
-	while (s[start + i] && i < len)
-	{
+	i = -1;
+	while (s[start + ++i] && i < len)
 		dst[i] = s[start + i];
-		i++;
-	}
 	dst[i] = '\0';
 	return (dst);
 }

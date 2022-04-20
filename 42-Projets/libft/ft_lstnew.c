@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_listnew.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 09:39:08 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/19 16:39:05 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/20 09:04:49 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
 
-	new = (t_list*)malloc(sizeof(new));
+	new = malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
 	new->content = content;

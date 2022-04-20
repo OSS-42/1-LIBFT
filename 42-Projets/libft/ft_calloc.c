@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 14:53:26 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/07 10:36:27 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/20 09:17:32 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_calloc(size_t count, size_t size)
 
 	mem = malloc(count * size);
 	if (mem == NULL)
+		return (NULL);
+	if (count == SIZE_MAX && size == SIZE_MAX)
 		return (NULL);
 	ft_bzero(mem, size * count);
 	return (mem);

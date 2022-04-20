@@ -13,7 +13,7 @@ LIBCBON = ft_lstnew.c
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra #-I -nostartfiles
+CFLAGS = -Wall -Werror -Wextra -c #-I -nostartfiles
 
 RM = rm -f
 
@@ -26,14 +26,9 @@ OBJBON = $(LIBCBON:.c=.o)
 
 all:	$(NAME)
 
-$(NAME):	$(OBJFUN)
+$(NAME):
+	$(CC) $(CFLAGS) $(LIBCFUN)
 	$(ARMAN) $(NAME) $(OBJFUN)
-
-# $(OBJFUN): 
-# 	$(CC) $(CFLAGS) $(LIBCFUN) $(OBJFUN)
-# 
-# $(OBJBON):
-# 	$(CC) $(CFLAGS) $(LIBCBON) $(OBJBON)
 
 clean:
 	$(RM) $(OBJFUN) $(OBJBON)
@@ -50,6 +45,7 @@ re: fclean all
 #============================================================#
 
 bonus: $(NAME) $(OBJFUN)
+	$(CC) $(CFLAGS) $(LIBCBON)
 	$(ARBON) $(NAME) $(OBJBON)
 
 .PHONY: all clean fclean re bonus
