@@ -9,7 +9,7 @@ LIBCFUN = \
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
 		ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c  ft_putnbr_fd.c \
 
-LIBCBON = ft_lstnew.c
+LIBCBON = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c 
 
 CC = gcc
 
@@ -17,9 +17,7 @@ CFLAGS = -Wall -Werror -Wextra -c #-I -nostartfiles
 
 RM = rm -f
 
-ARMAN = ar rcs
-
-ARBON = ar cs
+AR = ar rcs
 
 OBJFUN = $(LIBCFUN:.c=.o)
 OBJBON = $(LIBCBON:.c=.o)
@@ -28,7 +26,7 @@ all:	$(NAME)
 
 $(NAME):
 	$(CC) $(CFLAGS) $(LIBCFUN)
-	$(ARMAN) $(NAME) $(OBJFUN)
+	$(AR) $(NAME) $(OBJFUN)
 
 clean:
 	$(RM) $(OBJFUN) $(OBJBON)
@@ -46,7 +44,7 @@ re: fclean all
 
 bonus: $(NAME) $(OBJFUN)
 	$(CC) $(CFLAGS) $(LIBCBON)
-	$(ARBON) $(NAME) $(OBJBON)
+	$(AR) $(NAME) $(OBJBON)
 
 .PHONY: all clean fclean re bonus
 
@@ -55,7 +53,7 @@ bonus: $(NAME) $(OBJFUN)
 # ft_strncat.c  ft_strncpy.c 
 # ft_putchar.c ft_putnbr.c ft_putstr.c
 #=========================== TO DO ===========================#
-# ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter
+# ft_lstdelone.c ft_lstdel.c  ft_lstiter
 # ft_lstmap.c 
 #======================== NOT ASK FOR ========================#
 # ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c ft_strclr.c
