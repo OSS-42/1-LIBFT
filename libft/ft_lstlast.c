@@ -6,13 +6,13 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:18:55 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/20 15:24:44 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/21 11:17:46 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	unsigned int	count;
 	unsigned int	i;

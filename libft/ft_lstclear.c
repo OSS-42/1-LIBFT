@@ -6,7 +6,7 @@
 /*   By: ewurstei <ewurstei@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 09:55:11 by ewurstei          #+#    #+#             */
-/*   Updated: 2022/04/21 09:55:11 by ewurstei         ###   ########.fr       */
+/*   Updated: 2022/04/21 13:40:53 by ewurstei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,14 @@
 
 void ft_lstclear(t_list **lst, void (*del)(void*))
 {
-
-	recursivite ?
 	t_list	*buffer;
-	t_list	*next;
-
-	buffer = *lst;
-	if (del)
+	
+	while (*lst)
 	{
-		if (buffer)
-		{
-			next = buffer->next;
-			del(buffer->content);
-			free(buffer);
-			buffer = next;
-		}
-		*lst = NULL;
-	}	
+		buffer = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = buffer;
+	}
+//	free(*lst);
+//	*lst = NULL;
 }
