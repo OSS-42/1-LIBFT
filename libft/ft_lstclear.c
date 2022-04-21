@@ -14,10 +14,21 @@
 
 void ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (!lst || !del)
-		return ;
-	while (lst->next != NULL)
-		ft_lstdelone(*lst, ###);
-		next = lst->next;
-	
+
+	recursivite ?
+	t_list	*buffer;
+	t_list	*next;
+
+	buffer = *lst;
+	if (del)
+	{
+		if (buffer)
+		{
+			next = buffer->next;
+			del(buffer->content);
+			free(buffer);
+			buffer = next;
+		}
+		*lst = NULL;
+	}	
 }
