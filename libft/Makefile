@@ -26,7 +26,7 @@ OBJBON = $(LIBCBON:.c=.o)
 
 all:	$(NAME)
 
-$(NAME):
+$(NAME): $(OBJFUN)
 	$(CC) $(CFLAGS) $(LIBCFUN)
 	$(AR) $(NAME) $(OBJFUN)
 
@@ -54,9 +54,6 @@ bonus: $(NAME) $(OBJFUN)
 # ft_strmap.c ft_strstr.c ft_strcat.c  ft_strcmp.c ft_strcpy.c
 # ft_strncat.c  ft_strncpy.c 
 # ft_putchar.c ft_putnbr.c ft_putstr.c
-#=========================== TO DO ===========================#
-# ft_lstdelone.c ft_lstdel.c  ft_lstiter
-# ft_lstmap.c 
 #======================== NOT ASK FOR ========================#
 # ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c ft_strclr.c
 # ft_striter.c ft_strequ.c ft_strnequ.c ft_putendl.c 
