@@ -1,6 +1,6 @@
 # 42-Libft
 
-![LIBFT](https://github.com/byaliego/42-project-badges/blob/main/badges/libft-bonus.png)
+![LIBFT](https://github.com/byaliego/42-project-badges/blob/main/badges/libftm.png)
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/xDeadpoolx/1-LIBFT?style=for-the-badge)
 
